@@ -6,15 +6,15 @@ object Currying extends App :
   def mult(x: Double, y: Double): Double = x * y
 
   // function with currying
-  // curriedMult has actually type: Double => (Double => Double)
-  def curriedMult(x: Double)(y: Double): Double = x * y
+  // multCurried has actually type: Double => (Double => Double)
+  def multCurried(x: Double)(y: Double): Double = x * y
 
   // slightly different syntax at the call side..
   println(mult(10, 2)) // 20
-  println(curriedMult(10)(2)) // 20
+  println(multCurried(10)(2)) // 20
 
   // curriedMult can be partially applied!
-  val twice: Double => Double = curriedMult(2)
+  val twice: Double => Double = multCurried(2)
 
   println(twice(10)) // 20
 
