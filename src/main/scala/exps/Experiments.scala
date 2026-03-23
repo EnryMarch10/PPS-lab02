@@ -2,7 +2,7 @@ package exps
 
 import scala.annotation.tailrec
 
-class Experiments:
+object Experiments:
 
     //// PART 1 - Warm up
 
@@ -77,10 +77,27 @@ class Experiments:
             case num => tailReverseNumber(num / 10, acc * 10 + (num - num / 10 * 10))
         tailReverseNumber(n)
 
+    enum Expr:
+        case Literal(value: Int)
+        case Add(left: Expr, right: Expr)
+        case Multiply(left: Expr, right: Expr)
+
+    object Expr:
+
+        def evaluate(expr: Expr): Int = expr match
+            case Multiply(l, r) => evaluate(l) * evaluate(r)
+            case Add(l, r) => evaluate(l) + evaluate(r)
+            case Literal(n) => n
+
+        def show(expr: Expr): String = expr match
+            case Multiply(l, r) => "(" + show(l) + " * " + show(r) + ")"
+            case Add(l, r) => "(" + show(l) + " + " + show(r) + ")"
+            case Literal(n) => s"$n"
+
 @main def tryNeg(): Any =
-    val experiments = Experiments()
+    import Experiments.*
     val empty: String => Boolean = _ == "" // predicate on strings
-    val notEmpty = experiments.getNeg(empty) // which type of notEmpty?
+    val notEmpty = getNeg(empty) // which type of notEmpty?
     println(notEmpty("foo")) // true
     println(notEmpty("")) // false
     println(notEmpty("foo") && !notEmpty("")) // true.. a comprehensive test
