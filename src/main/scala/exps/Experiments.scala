@@ -1,8 +1,10 @@
 package exps
 
+import scala.annotation.tailrec
+
 class Experiments:
 
-/// WARM UP
+    //// PART 1 - Warm up
 
     // standard function with no currying
     def div(x: Double, y: Double): Double = x * y
@@ -10,6 +12,8 @@ class Experiments:
     // function with currying
     // divCurried has actually type: Double => (Double => Double)
     def divCurried(x: Double)(y: Double): Double = x * y
+
+    //// PART 2 - Functions
 
 /// FUNCTIONS - match cases
 
@@ -48,6 +52,30 @@ class Experiments:
     def p4(x: Int, y: Int, z: Int): Boolean = x <= y && y == z
 
     def compose(f: Int => Int, g: Int => Int): Int => Int = x => f(g(x))
+
+    //// PART 3 - Recursion
+
+    def power(base: Double, exponent: Int): Double =
+        @tailrec
+        def posPower(base: Double, exponent: Int, acc: Double = 1.0): Double = exponent match
+            case e if e > 1 => posPower(base, e - 1, acc * base)
+            case 1 => acc * base
+        @tailrec
+        def negPower(base: Double, exponent: Int, acc: Double = 1.0): Double = exponent match
+            case e if e < 0 => negPower(base, e + 1, acc * (1 / base))
+            case 0 => acc
+        exponent match
+            case e if e > 1 => posPower(base, e)
+            case e if e < 0 => negPower(base, e)
+            case 1 => base
+            case 0 => 1
+
+    def reverseNumber(n: Int): Int =
+        @tailrec
+        def tailReverseNumber(x: Int, acc: Int = 0): Int = x match
+            case num if num > -10 && num < 10  => acc * 10 + num
+            case num => tailReverseNumber(num / 10, acc * 10 + (num - num / 10 * 10))
+        tailReverseNumber(n)
 
 @main def tryNeg(): Any =
     val experiments = Experiments()

@@ -2,6 +2,6 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <option name="separateProdTestSources" value="true" />
-    <profile name="sbt 1" modules="pps-lab02,pps-lab02.main,pps-lab02.test,pps-lab02_9852,pps-lab02_9852.main,pps-lab02_9852.test" />
+    <profile name="sbt 1" modules="pps-lab02,pps-lab02.main,pps-lab02.test,pps-lab02_2596,pps-lab02_2596.main,pps-lab02_2596.test,pps-lab02_9852,pps-lab02_9852.main,pps-lab02_9852.test" />
   </component>
 </project>
