@@ -22,3 +22,14 @@ class OptionalIntTest:
     assertEquals(1, OptionalInt.orElse(empty, 1))
 
   /** Task 5: do test for map **/
+
+  @Test def mapShouldReturnValueWhenNonEmpty(): Unit =
+      import Optionals.OptionalInt.*
+      assertEquals(Just(6), mapInt(Just(5))(_ + 1))
+      assertEquals(Empty(), mapInt(Empty())(_ + 1))
+
+  @Test def filterShouldReturnAcceptedValueWhenNonEmpty(): Unit =
+      import Optionals.OptionalInt.*
+      assertEquals(Just(5), filter(Just(5))(_ > 2))
+      assertEquals(Empty(), filter(Just(5))(_ > 8))
+      assertEquals(Empty(), filter(Empty())(_ > 2))
