@@ -50,7 +50,7 @@ First laboratory about functional programming using **Scala**.
    - Implement a `neg` function that accepts a **predicate** on strings (i.e., a function from strings to Booleans) and
      returns another predicate on strings, namely, one that does the exact opposite; write the type first, and then
      define the function both as a val lambda and with method syntax.
-     ```
+     ```Scala
      val empty: String => Boolean = _ == "" // predicate on strings
      val notEmpty = neg(empty) // which type of notEmpty?
      notEmpty("foo") // true
