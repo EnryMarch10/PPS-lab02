@@ -38,15 +38,14 @@ First laboratory about functional programming using **Scala**.
 1. First‑Class & Higher‑Order Functions:
    - Get familiar with first-class and higher order functions as well as with the different styles for expressing
    functions.
-   - Using match-cases, implement the following function from `Int` to `String`:
-     $$
-     \text{positive}(x) =
-     \begin{cases}
-     \text{"positive"} & \text{if } x \ge 0 \\
-     \text{"negative"} & \text{if } x < 0
-     \end{cases}
-     $$
-   in both of the following styles: (i) val assigned to function literal (lambda) and (ii) method syntax.
+   - Using match-cases, implement the following function from `Int` to `String`;
+
+     | Condition | Result |
+     |-----------|--------|
+     | x ≥ 0 | "positive" |
+     | x < 0 | "negative" |
+
+     in both of the following styles: (i) val assigned to function literal (lambda) and (ii) method syntax.
    - Implement a `neg` function that accepts a **predicate** on strings (i.e., a function from strings to Booleans) and
      returns another predicate on strings, namely, one that does the exact opposite; write the type first, and then
      define the function both as a val lambda and with method syntax.
@@ -57,7 +56,7 @@ First laboratory about functional programming using **Scala**.
      notEmpty("") // false
      notEmpty("foo") && !notEmpty("") // true.. a comprehensive test
      ```
-2. Currying:
+1. Currying:
    - Implement a predicate that checks whether its arguments $x, y , z$ respect the relation $x ≤ y = z$, in 4 variants
    (curried/non-curried $\times$ val/def):
      - `val p1: <CurriedFunType> = ...`
@@ -65,7 +64,7 @@ First laboratory about functional programming using **Scala**.
      - `def p3(...)(...)(...): ... = ...`
      - `def p4(...): ... = ...`
      - Notice: function types and function literals are syntactically similar.
-3. Function Composition $(f \cdot g )(x) = f(g(x))$:
+2. Function Composition $(f \cdot g )(x) = f(g(x))$:
    - Signature: `compose(f: Int => Int, g: Int => Int): Int => Int`.
    - Example: `compose(_ - 1, _ * 2)(5) == 9`.
 
