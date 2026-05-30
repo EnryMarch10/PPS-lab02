@@ -8,7 +8,7 @@ object HigherOrderFunctions extends App:
   val h: (Int, Int, (Int, Int) => Int) => Int = (a, b, f) => f(a, b)
 
   println(h(10, 5, _ * _)) // 50
-  println(h(10, 5, (a, b) => a + b )) // 15
+  println(h(10, 5, (a, b) => a + b)) // 15
   println(h(10, 5, f)) // 15
 
   val i: (Int, Int => Int, Int => Int) => Int =
@@ -16,7 +16,7 @@ object HigherOrderFunctions extends App:
 
   println(i(10, _ + 1, _ * 2)) // 21
 
-  val l: (Int => Int) => (Int => Int) =
-    f => (i => f(f(i))) // without parens: f => i => f(f(i))
+  val l: (Int => Int) => (Int => Int) = // without parens (right assoc): (Int => Int) => Int => Int
+    f => (i => f(f(i))) // without parens (right assoc): f => i => f(f(i))
 
   println(l(_ + 1)(10)) // 12, see currying next..

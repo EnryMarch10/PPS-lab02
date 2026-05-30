@@ -1,6 +1,6 @@
 package it.unibo.pps.u02
 
-object Currying extends App :
+object Currying extends App:
 
   // standard function with no currying
   def mult(x: Double, y: Double): Double = x * y

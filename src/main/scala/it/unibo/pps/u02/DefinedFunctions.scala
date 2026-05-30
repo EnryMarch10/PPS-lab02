@@ -1,6 +1,6 @@
 package it.unibo.pps.u02
 
-object DefinedFunctions extends App :
+object DefinedFunctions extends App:
 
   // defined function, essentially using UML-like syntax
   def square(d: Double): Double = d * d
