@@ -1,4 +1,4 @@
-# Lab 02 - Functional Programming
+# Lab 02 - Functional Programming Basics
 
 Third laboratory of [Programming and Development Paradigms - a.y. 2025-2026](https://www.unibo.it/en/teaching/course-unit-catalogue/course-unit/2025/526526) ([Computer Science and Engineering](https://corsi.unibo.it/2cycle/ComputerScienceEngineering)).
 
