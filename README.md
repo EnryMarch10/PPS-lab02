@@ -20,7 +20,7 @@ First laboratory about functional programming using **Scala**.
    - Use `scala` or `sbt` console to explore Scala/FP examples from the `u02` package.
    - Try variations, explore autonomously, and ask in case of doubts.
    - Copy and past code as in any other terminal.
-   - Run `sbt console` on the root of the project (or use the REPL directly).
+   - Run `sbt` console on the root of the project (or use the REPL directly).
    - Explore the class definitions in `u02` by experimenting with code examples.
    - For example, with Currying:
      - Copy `mult` and `multCurried` from the lecture code.
